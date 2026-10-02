@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的宽带 · 用户端</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body data-page="user">
+<header class="topbar">
+  <div class="brand">光纤宽带新装平台<span class="dot"> ●</span> 用户端</div>
+  <div class="spacer"></div>
+  <a class="userlink" href="/installer" target="_blank">安装端 ↗</a>
+</header>
+<main style="max-width:860px">
+  <h2 class="section">我的新装工单</h2>
+  <div class="card">
+    <div class="row">
+      <label class="field" style="margin:0;flex:1">输入工单号或预留手机号查询
+        <input id="lookup" placeholder="如 BB-SEED-WAIT 或 13900000002">
+      </label>
+      <button id="lookup-btn" style="margin-top:18px">查询</button>
+    </div>
+    <p class="muted" style="margin:10px 0 0">
+      用户端仅展示 <strong>预约、测速、验收结果</strong>；测速达标后凭短信验证码由用户本人签收，工程师不能代签。
+    </p>
+  </div>
+  <div id="user-orders" style="margin-top:16px"></div>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

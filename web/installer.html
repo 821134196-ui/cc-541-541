@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宽带新装工单 · 安装端</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body data-page="installer">
+<header class="topbar">
+  <div class="brand">光纤宽带新装平台<span class="dot"> ●</span> 安装端</div>
+  <nav>
+    <a href="#map" data-tab="map" class="active">资源地图</a>
+    <a href="#accept" data-tab="accept">新装受理</a>
+    <a href="#schedule" data-tab="schedule">安装排程</a>
+    <a href="#orders" data-tab="orders">工单总表</a>
+  </nav>
+  <div class="spacer"></div>
+  <a class="userlink" href="/user" target="_blank">用户端 ↗</a>
+</header>
+<main>
+  <section id="tab-map" class="tab">
+    <h2 class="section">楼栋资源地图（点击楼层展开分光器端口）</h2>
+    <div id="resource-map"></div>
+  </section>
+
+  <section id="tab-accept" class="tab hidden">
+    <h2 class="section">新装受理：填写申请并核查端口资源</h2>
+    <div class="card">
+      <div id="accept-form"></div>
+    </div>
+  </section>
+
+  <section id="tab-schedule" class="tab hidden">
+    <h2 class="section">安装排程（预约 / 用户不在 / 改期 / 超时重查）</h2>
+    <div class="card"><div id="schedule-board"></div></div>
+  </section>
+
+  <section id="tab-orders" class="tab hidden">
+    <h2 class="section">工单总表（现场勘线 · 设备绑定 · 测速 · 签收）</h2>
+    <div class="card">
+      <div class="row" style="margin-bottom:10px">
+        <label class="field" style="margin:0">状态筛选
+          <select id="order-filter" style="width:180px;margin-top:0">
+            <option value="all">全部</option>
+            <option value="address_error">地址有误</option>
+            <option value="reserved">端口预占中</option>
+            <option value="scheduled">已排期</option>
+            <option value="user_absent">用户不在</option>
+            <option value="optical_failed">光功率不达标</option>
+            <option value="surveyed">待验收</option>
+            <option value="speed_failed">测速不达标</option>
+            <option value="expired">预占超时</option>
+            <option value="rejected">端口已满</option>
+            <option value="activated">已开通</option>
+          </select>
+        </label>
+      </div>
+      <div id="orders-table"></div>
+    </div>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
